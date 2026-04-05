@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@400;600&display=swap");
+
+/* ============================================================
+   Galaxy Hero — Alien Romance Hero Banner
+   ============================================================ */
+
+.galaxy-hero-root {
+  background-color: #0a0010;
+  min-height: 100vh;
+}
+
+.galaxy-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Full-bleed background image */
+.galaxy-hero__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Gradient overlay — left darkness for readability */
+.galaxy-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(20, 5, 40, 0.88) 0%,
+    rgba(20, 5, 40, 0.65) 35%,
+    rgba(20, 5, 40, 0.0) 65%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Text content positioned on the left */
+.galaxy-hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  padding: 3rem 3rem 3rem 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* ── Eyebrow / decorative title ── */
+.galaxy-eyebrow {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ffb6d9;
+  text-shadow: 0 0 12px rgba(255, 100, 200, 0.9), 0 0 28px
+    rgba(200, 60, 200, 0.6), 0 0 60px rgba(160, 40, 200, 0.3);
+  margin: 0;
+}
+
+/* ── Main romantic paragraph ── */
+.galaxy-paragraph {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+  line-height: 1.85;
+  color: #ffe4f0;
+  max-width: 420px;
+  text-shadow: 0 0 18px rgba(255, 182, 213, 0.9), 0 0 40px
+    rgba(200, 100, 200, 0.5), 0 0 80px rgba(160, 60, 220, 0.25);
+  margin: 0;
+}
+
+/* ── Sparkle decorators ── */
+.galaxy-sparkles {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.galaxy-sparkles--bottom {
+  margin-top: 0.4rem;
+}
+
+.galaxy-sparkle {
+  font-size: 0.9rem;
+  color: #ffb6d9;
+  text-shadow: 0 0 10px rgba(255, 150, 220, 1), 0 0 24px rgba(220, 80, 200, 0.6);
+  display: inline-block;
+  animation: galaxy-sparkle-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes galaxy-sparkle-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+/* ── Responsive: mobile ── */
+@media (max-width: 767px) {
+  .galaxy-hero {
+    align-items: flex-start;
+    height: auto;
+    min-height: 100svh;
+    flex-direction: column;
+  }
+
+  .galaxy-hero__bg-img {
+    object-position: center center;
+  }
+
+  .galaxy-hero__overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 5, 40, 0.9) 0%,
+      rgba(20, 5, 40, 0.75) 50%,
+      rgba(20, 5, 40, 0.3) 100%
+    );
+  }
+
+  .galaxy-hero__content {
+    max-width: 100%;
+    padding: 2.5rem 1.5rem 3rem;
+  }
+
+  .galaxy-paragraph {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+}
